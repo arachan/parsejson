@@ -1,17 +1,17 @@
 import unohelper
-from org.openoffice.addin.sample import XGetRest
+from org.openoffice.addin.sample import Xjsonparse
 from com.sun.star.sheet import XAddIn
 from com.sun.star.lang import XLocalizable, XServiceName, Locale
 import urllib.request
 import json
 
-class GetRest( unohelper.Base, XGetRest,  XAddIn, XServiceName ):
+class jsonparse( unohelper.Base, Xjsonparse,  XAddIn, XServiceName ):
     def __init__( self, ctx ):
         self.ctx = ctx
         self.locale = Locale("ja","JP", "" )
 
     def getServiceName( self ):
-        return "GetRest"
+        return "JSONPARSE Function"
 
     def setLocale( self, locale ):
         self.locale = locale
@@ -26,25 +26,28 @@ class GetRest( unohelper.Base, XGetRest,  XAddIn, XServiceName ):
         return aProgrammaticName
 
     def getFunctionDescription( self , aProgrammaticName ):
-        return "Get JSON Data from REST API"
+        return "Parse JSON Function"
 
     def getArgumentDescription( self, aProgrammaticFunctionName, nArgument ):
-        return "URL of REST server"
+        return "Get String"
     
     def getProgrammaticCategoryName( self, aProgrammaticFunctionName ):
         return "Add-In"
 
     def getDisplayArgumentName( self, aProgrammaticFunctionName, nArgument ):
-        return "URL string"
+        return "JSON"
+    
+    def getDisplayArgumentName( self, aProgrammaticFunctionName, nArgument ):
+        return "Pattern"
 
-    def GetRest(self, url) -> str:
+    def jsonparse(self,data,*keys)->str:
         """
-        Get JSON Data from REST API
+        Parse JSON Data
         :rtype:object
-        :param:url REST API url
-        :return:json_file
+        :param:dict:data
+        :return:data
         """
-        data = urllib.request.urlopen(url)
-        json_file = json.loads(data.read().decode('utf-8'))
-        return str(json_file)
-
+        for key in keys:
+            data=data[key]
+        
+        return data

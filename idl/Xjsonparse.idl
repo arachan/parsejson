@@ -2,10 +2,10 @@
 
 module org { module openoffice { module addin { module sample {
 
-    interface XGetRest : com::sun::star::uno::XInterface
+    interface Xjsonparse : com::sun::star::uno::XInterface
         {
             /** swaps the content of the incoming array */
-            string GetRest( [in] string str );
+            string jsonparse( [in] string JSON,[in] string pattern );
         };
 
 }; }; }; };

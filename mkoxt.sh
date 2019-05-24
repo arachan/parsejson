@@ -1,8 +1,8 @@
 #!/bin/bash
 
-TMPZIP=/tmp/getrest.oxt
-IDLBASENAME=XGetRest
-RDBFILE=getrest.rdb
+TMPZIP=/tmp/jsonparse.oxt
+IDLBASENAME=Xjsonparse.idl
+RDBFILE=jsonparse.rdb
 
 source mkoxt.sh.conf
 

@@ -1,4 +1,4 @@
-# getRest Function
+# ParseJSON Function
 
 LibreOffice Calc extensions sample 
 
@@ -37,9 +37,11 @@ Any kind unix like commandline tools can install.
 
 ## How to install
 
-1. make `getrest.oxt`
+1. make `jsonparse.oxt`
 2. Double Click and Install extension to LibreOffice.
 
 ## How to use
 
-`=GETREST("http://some-funcy-api")`
+Sorry, Dont use.
+
+`=jsonparse("http://some-funcy-api",key.key.key)`
