@@ -37,6 +37,12 @@ class jsonparse( unohelper.Base, Xjsonparse,  XAddIn, XServiceName ):
     def getDisplayArgumentName( self, aProgrammaticFunctionName, nArgument ):
         return "JSON"
     
+    def getArgumentDescription( self, aProgrammaticFunctionName, nArgument ):
+        return "Pattern. example (results1.0.address1)"
+    
+    def getProgrammaticCategoryName( self, aProgrammaticFunctionName ):
+        return "Add-In"
+
     def getDisplayArgumentName( self, aProgrammaticFunctionName, nArgument ):
         return "Pattern"
 
