@@ -40,14 +40,14 @@ class jsonparse( unohelper.Base, Xjsonparse,  XAddIn, XServiceName ):
     def getDisplayArgumentName( self, aProgrammaticFunctionName, nArgument ):
         return "Pattern"
 
-    def jsonparse(self,data,*keys)->str:
+    def jsonparse(self,data,tuple)->str:
         """
         Parse JSON Data
         :rtype:object
         :param:dict:data
         :return:data
         """
-        for key in keys:
+        for key in tuple:
             data=data[key]
         
         return data
