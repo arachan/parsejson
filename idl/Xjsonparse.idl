@@ -5,7 +5,7 @@ module org { module openoffice { module addin { module sample {
     interface Xjsonparse : com::sun::star::uno::XInterface
         {
             /** swaps the content of the incoming array */
-            string jsonparse( [in] string JSON,[in] sequence <pattern> );
+            string jsonparse( [in] string JSON,[in] sequence <any> );
         };
 
 }; }; }; };
