@@ -1,7 +1,7 @@
 #!/bin/bash
 
 TMPZIP=/tmp/jsonparse.oxt
-IDLBASENAME=Xjsonparse.idl
+IDLBASENAME=Xjsonparse
 RDBFILE=jsonparse.rdb
 
 source mkoxt.sh.conf
